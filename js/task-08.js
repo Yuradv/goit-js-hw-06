@@ -9,9 +9,15 @@ function onCheckForm(event) {
         elements: { email, password },
     } = event.currentTarget;
 
+    const formList = {};
+
     if (email.value === '' || password.value === '') {
-        return console.log('Please fill in all the fields!');
+        return alert('Please fill in all the fields!');
+    } else {
+        formList[`${email.name}`] = `${email.value}`;
+        formList[`${password.name}`] = `${password.value}`;
     }
-    console.log(`Email: ${email.value}, Password: ${password.value}`);
+    console.log(formList);
+
     event.currentTarget.reset();
 }

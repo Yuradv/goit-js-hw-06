@@ -20,4 +20,4 @@ const addImages = images.map(
         `<li><img src= '${image.url}' alt= '${image.alt} width = '200' height = '200'/></li>`,
 );
 
-imagesEl.insertAdjacentHTML('afterbegin', addImages);
+imagesEl.insertAdjacentHTML('afterbegin', addImages.join(' '));

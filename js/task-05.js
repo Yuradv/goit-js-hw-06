@@ -6,7 +6,8 @@ const refs = {
 refs.input.addEventListener('input', onInputChange);
 
 function onInputChange(event) {
-    refs.input = event.currentTarget.value;
-
-    refs.input !== ' ' ? (refs.output.innerText = refs.input) : 'незнакомец';
+    refs.output.textContent = event.currentTarget.value;
+    if (refs.output.textContent === '') {
+        refs.output.textContent = 'Anonymous';
+    }
 }
